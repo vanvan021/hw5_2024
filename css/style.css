@@ -1,0 +1,336 @@
+
+@keyframes mymove {
+  0% {width:25px; opacity:0;}
+  100% {width:475px; opacity:1;}
+}
+
+
+.logo {
+    position: relative;
+    animation: mymove 5s infinite;
+}
+
+
+
+/* STEP 2：Edit the body element to use the Poppins font (using Google fonts) with serif as a backup.
+It should also use the image “concrete_seamless.png” as a background-image with a backup color of #f1f1f1.*/
+
+body{
+    font-family: "Poppins", serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+
+/* STEP 3：Edit the css for the header tag (all instances) to use flex to match our example.*/
+
+.header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* STEP 4: Edit the css for the nav_links class to use flex to match our example. Do not modify the list items or the links - modify the nav_links class to use flex. */
+
+.nav_links{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+a:link {
+    color: purple;
+    text-decoration: underline;
+}
+
+  a:visited {
+    color: purple;
+    text-decoration: underline;
+}
+
+
+
+
+/* STEP 5:
+Style the links so that they have the same color even after they have been visited. This is a “challenge” problem. You should not give or receive help when completing it.*/
+
+/* !!!!come back to do this as challenge!!!! */
+
+
+
+/* STEP 6:
+Identify the proper selector to style ONLY those header elements that are direct children of a card class.  The required styling is the following:
+background: #288088,
+solid 2px border using #45ADAD,
+20px of padding on the top and the bottom,
+50px border-radius on the top left and right corners.
+*/
+
+.card > header{
+    background:#288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.card{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+
+/*
+ STEP 7: Edit the css for the card class to match our example. Achieve this by using a flex-property to specify an initial “size” of 450px.  You need to think about this from a “flex” perspective and realize that flex-direction will affect the size of the elements.  You can see that in the mobile view they all have the same width. 
+
+
+ STEP 8: Edit the css for the pricing class to match our example. You should use flex and the cards should be centered both horizontally and vertically.
+*/
+h4{
+    text-align: center;
+}
+
+.card{
+    display: flex;
+    width: 450px;
+    flex-direction: column;
+    /*justify-content: center;
+    flex-direction: column;
+    align-items: center;*/
+}
+
+.pricing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /*justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;*/
+}
+
+/* STEP 9: Style the images in the gallery class. These elements will have a solid 10px border with a color of #50C7C7, 10px margin on all four sides and a width of 300px. */
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.gallery img{
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.thumbs-up{
+    display: none;
+}
+
+/* STEP 10: Edit the css for the gallery class to use flex to match our example.
+(You may want to look at the screen shots from 1200px and 1500px as well -  the changes are not from media queries, but from the use of flex.)
+ */
+
+ /* !!!!back to check after finished the breakpoint!!!! */
+
+
+ @media only screen and (min-width: 900px)
+ {
+
+    body{
+        font-family: "Poppins", serif;
+        background-image: url("../images/concrete_seamless.png");
+        background-color: #f1f1f1;
+    }
+
+    .header{
+        padding: 10px 16px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .sticky{
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    .about{
+    padding: 16px;
+    }
+
+    .sticky + .about {
+        padding-top: 102px;
+    }
+
+
+    .nav_links {
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    a:link {
+        color: purple;
+        text-decoration: underline;
+    }
+
+      a:visited {
+        color: purple;
+        text-decoration: underline;
+    }
+
+    .card > header{
+        background:#288088;
+        border: 2px solid #45ADAD;
+        padding: 20px 0;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+    }
+
+    .card{
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+    }
+
+
+
+    .card{
+        display: flex;
+        width: 275px;
+        flex-direction: column;
+    }
+
+    .pricing{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gallery{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .gallery img{
+        border: solid 10px #50C7C7;
+        margin: 10px;
+        width: 300px;
+    }
+
+    .logo {
+        animation: none;
+    }
+    .thumbs-up{
+        display: none;
+    }
+
+
+
+ }
+
+ @media (prefers-reduced-motion: reduce)
+ {
+    .logo {
+        animation: none;
+    }
+
+ }
+
+
+ @media print and (orientation: portrait)
+    {
+
+        .logo {
+            animation: none;
+        }
+
+        body{
+            font-family: "Arial", Helvetica;
+            background-image: none;
+            background-color: #f1f1f1;
+        }
+
+        .header{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .nav_links {
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .nav_item a {
+            padding: 90px;
+        }
+
+        a:link {
+            color: blue;
+            text-decoration: underline;
+        }
+
+          a:visited {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .card > header{
+            background:#288088;
+            padding: 20px 0;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+        }
+
+        .card{
+            display: flex;
+            width: 275px;
+            flex-direction: column;
+        }
+
+        .card{
+            flex-basis:325px ;
+            border: 2px solid #45ADDD;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        .pricing {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            align-items: flex-end;
+        }
+
+        .gallery {
+            display: none;
+        }
+
+        .gallery img{
+            display:none;
+        }
+
+        #gallery {
+            display:none;
+        }
+
+        h4{
+            text-align: left;
+        }
+
+        .thumbs-up{
+            display: inline-block;
+        }
+
+
+
+
+
+
+
+    }
